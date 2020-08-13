@@ -12,9 +12,10 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.env.Environment;
-@PropertySource("classpath:message.properties")
+import org.springframework.context.annotation.PropertySource;
+
 @SpringBootApplication
-@ComponentScan({"com.ibm.hello.*", "com.ibm.cloud_garage.*", "com.ibm.health","com.infy.user.*"})
+@ComponentScan({"com.ibm.hello.*", "com.ibm.cloud_garage.*", "com.ibm.health"})
 public class Application extends SpringBootServletInitializer {
     @Autowired
     Environment environment;
