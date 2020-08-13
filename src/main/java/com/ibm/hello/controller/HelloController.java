@@ -32,7 +32,7 @@ import com.ibm.hello.service.ServiceName;
 import com.ibm.hello.model.Address;
 import com.ibm.hello.model.CovidData;
 import com.ibm.hello.model.DoctorDetailDTO;
-import com.ibm.hello.PatientPhysicalAndMedicalDetails;
+import com.ibm.hello.model.PatientPhysicalAndMedicalDetails;
 import com.ibm.hello.model.PatientRegistrationDTO;
 import com.ibm.hello.model.PatientRegistrationDetail;
 import com.ibm.hello.model.TravelDetail;
