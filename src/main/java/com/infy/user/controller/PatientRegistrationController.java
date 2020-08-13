@@ -40,7 +40,7 @@ public class PatientRegistrationController {
 	@PostMapping("/addpatient")
 	public ResponseEntity<Result> addUser(@RequestBody PatientRegistrationDTO patientRegistrationDTO)throws Exception{
 		String id = patientRegistrationService.addPatient(patientRegistrationDTO);
-		String message=environment.getProperty("UserRegistrationController.ADD_USER")+id;
+		String message="User is registered with"+id;
 		Result result = new Result(message);
 		ResponseEntity<Result> responseEntity= new ResponseEntity<>(result,HttpStatus.CREATED);
 		return responseEntity;
@@ -48,7 +48,7 @@ public class PatientRegistrationController {
 	@PostMapping("/updatepatient/{patientId}")
 	public ResponseEntity<Result> updatePatientRegistrationDetail(@RequestBody PatientRegistrationDetail patientRegistrationDetail,@PathVariable String patientId) throws Exception{
 		String id = patientRegistrationService.updatePatientRegistrationDetail(patientRegistrationDetail, patientId);
-		String message=environment.getProperty("UserRegistrationController.UPDATE_USER")+id;
+		String message="User is updated with"+id;
 		Result result = new Result(message);
 		ResponseEntity<Result> responseEntity= new ResponseEntity<>(result,HttpStatus.OK);
 		return responseEntity;
@@ -93,7 +93,7 @@ public class PatientRegistrationController {
 	@PostMapping("/updatepatientphysicaldetail")
 	public ResponseEntity<Result> updatePatientWithPhysicalDetail(@RequestBody PatientRegistrationDTO patientRegistrationDTO) throws Exception{
 		String id = patientRegistrationService.updatePatientWithPhysicalDetail(patientRegistrationDTO);
-		String message=environment.getProperty("UserRegistrationController.UPDATE_USER")+id;
+		String message="User is updated with"+id;
 		Result result = new Result(message);
 		ResponseEntity<Result> responseEntity= new ResponseEntity<>(result,HttpStatus.OK);
 		return responseEntity;
