@@ -19,11 +19,23 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 import com.ibm.hello.config.ServiceConfig;
 import com.ibm.hello.model.GreetingRequest;
 import com.ibm.hello.model.GreetingResponse;
 import com.ibm.hello.service.GreetingService;
 import com.ibm.hello.service.ServiceName;
+import com.ibm.hello.model.Address;
+import com.ibm.hello.model.CovidData;
+import com.ibm.hello.model.DoctorDetailDTO;
+import com.ibm.hello.PatientPhysicalAndMedicalDetails;
+import com.ibm.hello.model.PatientRegistrationDTO;
+import com.ibm.hello.model.PatientRegistrationDetail;
+import com.ibm.hello.model.TravelDetail;
 
 @RestController
 public class HelloController {
@@ -37,27 +49,90 @@ public class HelloController {
         this.serviceConfig = serviceConfig;
     }
 
-    @GetMapping(value = "/hello", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    @ApiResponses(value = {
-            @ApiResponse(code = 406, message = "Name parameter missing")
-    })
-    public ResponseEntity<GreetingResponse> helloWorld(
-            @RequestParam(name = "name", required = false) final String name,
-            @ApiParam(
-                    allowableValues = HELLO_NAME + "," + HOLA_NAME,
-                    value = "the beanName for the service implementation that should be used to fulfill the request")
-            @RequestHeader(name = "serviceName", required = false) final String serviceName
-    ) {
-
-        LOGGER.debug("Processing name: " + name);
-
-        if (StringUtils.isEmpty(name)) {
-            return ResponseEntity.status(406).build();
-        }
-
-        return ResponseEntity.ok(
-                getGreetingService(serviceName)
-                        .getGreeting(name));
+    @GetMapping(value = "/getpatient", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public ResponseEntity<PatientRegistrationDTO> helloWorld(    ) {
+	CovidData covidData = new CovidData();
+		covidData.setBcgVaccine('Y');
+		covidData.setCollectionDate(new Date());
+		covidData.setCovidTestResult("Negative");
+		covidData.setFluVaccine('Y');
+		covidData.setImmunoCompromisedCondition("No");
+		covidData.setPatientCategory("cat1");
+		List<String> specimenType = new ArrayList<>();
+		specimenType.add("Nasal Swab");
+		covidData.setSpecimenType(specimenType);
+		covidData.setSampleId(1l);
+		covidData.setPatientId("P1");
+		ArrayList<CovidData> covidDatas = new ArrayList<CovidData>();
+		covidDatas.add(covidData);
+		PatientRegistrationDTO patientRegistrationDTO = new PatientRegistrationDTO();
+		patientRegistrationDTO.setPatientId("P1");
+		PatientRegistrationDetail patientRegistrationDetail = new PatientRegistrationDetail();
+		patientRegistrationDetail.setAadhar("111122223333");
+		patientRegistrationDetail.setEmail("john.snow@gmail.com");
+		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+		Date registrationDate=sdf.parse("12-07-2020");
+		patientRegistrationDetail.setDateOfRegistration(registrationDate);
+		patientRegistrationDetail.setFirstName("John");
+		patientRegistrationDetail.setLastName("Snow");
+		patientRegistrationDetail.setMobileNo(9876543210l);
+		patientRegistrationDetail.setPassword("JohnSnow");
+		Address address = new  Address();
+		address.setAddress1("162,Near Medipoint Hospital");
+		address.setAddress2("hinjewadi ,pune");
+		address.setCity("pune");
+		address.setPincode(472442);
+		address.setState("Maharastra");
+		patientRegistrationDetail.setAddress(address);
+		Date birthDate=sdf.parse("12-07-2020");
+		patientRegistrationDetail.setDateOfBirth(birthDate);
+		patientRegistrationDTO.setPatientRegistrationDetail(patientRegistrationDetail);
+		PatientPhysicalAndMedicalDetails details= new PatientPhysicalAndMedicalDetails();
+		details.setWeightKg(70.0);
+		details.setHeightCm(123.0);
+		details.setGender('M');
+		details.setTravelIn15Days(true);
+		details.setAge(23);
+		List<TravelDetail> travelDetails = new ArrayList<TravelDetail>();
+		TravelDetail travelDetail = new TravelDetail();
+		Date dateOfTravel=sdf.parse("12-07-2020");
+		travelDetail.setDateOfTravel(dateOfTravel);
+		travelDetail.setFromPlace("Pune");
+		travelDetail.setToPlace("Dehradhun");
+		travelDetail.setStayDurationInDay(2);
+		travelDetails.add(travelDetail);
+		details.setTravelDetail(travelDetails);
+		details.setQuarantineIn15Days(true);
+		details.setBodyMassIndex(21);
+		details.setSymptoms("Yes");
+		details.setCough('Y');
+		details.setCold('Y');
+		details.setThroatPain('Y');
+		details.setBloodPressure('Y');
+		details.setDiabetes('Y');
+		details.setLungDisease('Y');
+		details.setHeartPatient('Y');
+		details.setBoneFracture('Y');
+		details.setAccidentalHistory('Y');
+		details.setWorkType("Labour");
+		details.setJunkFoodConsumptionFreq(2);
+		details.setExerciseDurationPerDay(3);
+		details.setMedicalInsurance(true);
+		patientRegistrationDTO.setPatientPhysicalAndMedicalDetails(details);
+		DoctorDetailDTO doctorDetailDTO = new DoctorDetailDTO();
+		doctorDetailDTO.setCity("Pune");
+		doctorDetailDTO.setDoctorId("D1");
+		doctorDetailDTO.setDoctorName("Rahul kumar");
+		doctorDetailDTO.setEmail("rahul.kumar@gmail.com");
+		doctorDetailDTO.setHospitalName("Medipoint");
+		doctorDetailDTO.setQualification("MBBS");
+		doctorDetailDTO.setSpecialist("Cardiologist");
+		doctorDetailDTO.setState("Maharastra");
+		patientRegistrationDTO.setDoctorDetailDTO(doctorDetailDTO);
+		patientRegistrationDTO.setPatientRegistrationDetail(patientRegistrationDetail);
+		patientRegistrationDTO.setCovidDataList(covidDatas);
+        return ResponseEntity.ok(patientRegistrationDTO
+             );
     }
 
     @PostMapping(
