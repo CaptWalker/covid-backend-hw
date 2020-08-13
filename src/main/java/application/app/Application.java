@@ -15,7 +15,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication
-@ComponentScan({"com.ibm.hello.*", "com.ibm.cloud_garage.*", "com.ibm.health"})
+@ComponentScan({"com.ibm.hello.*", "com.ibm.cloud_garage.*", "com.ibm.health","com.ibm.user"})
 public class Application extends SpringBootServletInitializer {
     @Autowired
     Environment environment;
