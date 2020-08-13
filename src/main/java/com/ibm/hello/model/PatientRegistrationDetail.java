@@ -4,7 +4,7 @@ import java.util.Date;
 
 import javax.validation.constraints.NotNull;
 
-import org.springframework.data.mongodb.core.index.Indexed;
+//import org.springframework.data.mongodb.core.index.Indexed;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -20,12 +20,12 @@ public class PatientRegistrationDetail {
 	private Date dateOfBirth;
 	@JsonFormat(shape = JsonFormat.Shape.STRING,pattern ="yyyy-MM-dd",timezone="IST")
 	private Date dateOfRegistration;
-	@Indexed(unique =true)
+	//@Indexed(unique =true)
 	@NotNull(message="Email Address must not be null")
 	private String email;
 	private Long mobileNo;
 	@NotNull(message="AAdhar Number must not be null")
-	@Indexed(unique= true)
+	//@Indexed(unique= true)
 	private String  aadhar;
 	private Address address;
 	public String getFirstName() {
