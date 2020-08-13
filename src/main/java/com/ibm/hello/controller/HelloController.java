@@ -70,9 +70,6 @@ public class HelloController {
 		PatientRegistrationDetail patientRegistrationDetail = new PatientRegistrationDetail();
 		patientRegistrationDetail.setAadhar("111122223333");
 		patientRegistrationDetail.setEmail("john.snow@gmail.com");
-		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-		Date registrationDate=sdf.parse("12-07-2020");
-		patientRegistrationDetail.setDateOfRegistration(registrationDate);
 		patientRegistrationDetail.setFirstName("John");
 		patientRegistrationDetail.setLastName("Snow");
 		patientRegistrationDetail.setMobileNo(9876543210l);
@@ -84,8 +81,6 @@ public class HelloController {
 		address.setPincode(472442);
 		address.setState("Maharastra");
 		patientRegistrationDetail.setAddress(address);
-		Date birthDate=sdf.parse("12-07-2020");
-		patientRegistrationDetail.setDateOfBirth(birthDate);
 		patientRegistrationDTO.setPatientRegistrationDetail(patientRegistrationDetail);
 		PatientPhysicalAndMedicalDetails details= new PatientPhysicalAndMedicalDetails();
 		details.setWeightKg(70.0);
@@ -95,8 +90,6 @@ public class HelloController {
 		details.setAge(23);
 		List<TravelDetail> travelDetails = new ArrayList<TravelDetail>();
 		TravelDetail travelDetail = new TravelDetail();
-		Date dateOfTravel=sdf.parse("12-07-2020");
-		travelDetail.setDateOfTravel(dateOfTravel);
 		travelDetail.setFromPlace("Pune");
 		travelDetail.setToPlace("Dehradhun");
 		travelDetail.setStayDurationInDay(2);
