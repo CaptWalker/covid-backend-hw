@@ -1,6 +1,6 @@
-package com.infy.user.model;
+package com.ibm.user.model;
 
-import com.infy.user.entities.DoctorDetail;
+import com.ibm.user.entities.DoctorDetail;
 
 public class DoctorDetailDTO {
 	private String doctorId;

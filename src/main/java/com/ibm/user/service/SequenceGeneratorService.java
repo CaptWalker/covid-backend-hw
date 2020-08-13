@@ -1,4 +1,4 @@
-package com.infy.user.service;
+package com.ibm.user.service;
 
 import static org.springframework.data.mongodb.core.FindAndModifyOptions.options;
 import static org.springframework.data.mongodb.core.query.Criteria.where;
@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
-import com.infy.user.entities.DatabaseSequence;
+import com.ibm.user.entities.DatabaseSequence;
 
 @Service
 public class SequenceGeneratorService {

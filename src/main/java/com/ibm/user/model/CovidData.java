@@ -1,4 +1,4 @@
-package com.infy.user.model;
+package com.ibm.user.model;
 
 import java.util.Date;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.infy.user.service;
+package com.ibm.user.service;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -7,12 +7,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.infy.user.entities.PatientRegistration;
-import com.infy.user.model.DoctorDetailDTO;
-import com.infy.user.model.Login;
-import com.infy.user.model.PatientRegistrationDTO;
-import com.infy.user.model.PatientRegistrationDetail;
-import com.infy.user.repository.PatientRegistrationRepository;
+import com.ibm.user.entities.PatientRegistration;
+import com.ibm.user.model.DoctorDetailDTO;
+import com.ibm.user.model.Login;
+import com.ibm.user.model.PatientRegistrationDTO;
+import com.ibm.user.model.PatientRegistrationDetail;
+import com.ibm.user.repository.PatientRegistrationRepository;
 
 @Service
 public class PatientRegistrationServiceImpl implements PatientRegistrationService{

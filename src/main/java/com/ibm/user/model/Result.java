@@ -1,4 +1,4 @@
-package com.infy.user.model;
+package com.ibm.user.model;
 
 public class Result {
 	private String message;

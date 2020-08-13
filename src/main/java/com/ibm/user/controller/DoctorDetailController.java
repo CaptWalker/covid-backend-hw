@@ -1,4 +1,4 @@
-package com.infy.user.controller;
+package com.ibm.user.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.infy.user.model.DoctorDetailDTO;
-import com.infy.user.service.DoctorDetailServiceImpl;
+import com.ibm.user.model.DoctorDetailDTO;
+import com.ibm.user.service.DoctorDetailServiceImpl;
 @RestController
 @CrossOrigin
 @RequestMapping("/doctor/")

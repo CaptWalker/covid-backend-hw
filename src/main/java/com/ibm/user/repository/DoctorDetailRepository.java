@@ -1,4 +1,4 @@
-package com.infy.user.repository;
+package com.ibm.user.repository;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 
-import com.infy.user.entities.DoctorDetail;
+import com.ibm.user.entities.DoctorDetail;
 
 public interface DoctorDetailRepository extends MongoRepository<DoctorDetail, String>{
 

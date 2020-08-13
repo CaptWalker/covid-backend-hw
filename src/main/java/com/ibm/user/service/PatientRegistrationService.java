@@ -1,10 +1,10 @@
-package com.infy.user.service;
+package com.ibm.user.service;
 
 import java.util.List;
 
-import com.infy.user.model.Login;
-import com.infy.user.model.PatientRegistrationDTO;
-import com.infy.user.model.PatientRegistrationDetail;
+import com.ibm.user.model.Login;
+import com.ibm.user.model.PatientRegistrationDTO;
+import com.ibm.user.model.PatientRegistrationDetail;
 
 public interface PatientRegistrationService {
 	public String addPatient(PatientRegistrationDTO patientRegistrationDTO) throws Exception ;

@@ -1,8 +1,8 @@
-package com.infy.user.model;
+package com.ibm.user.model;
 
 import java.util.ArrayList;
 
-import com.infy.user.entities.PatientRegistration;
+import com.ibm.user.entities.PatientRegistration;
 
 public class PatientRegistrationDTO {
 	private String patientId;

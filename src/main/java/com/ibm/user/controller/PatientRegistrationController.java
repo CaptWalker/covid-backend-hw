@@ -1,4 +1,4 @@
-package com.infy.user.controller;
+package com.ibm.user.controller;
 
 import java.util.List;
 
@@ -15,13 +15,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.infy.user.model.DoctorDetailDTO;
-import com.infy.user.model.Login;
-import com.infy.user.model.PatientRegistrationDTO;
-import com.infy.user.model.PatientRegistrationDetail;
-import com.infy.user.model.Result;
-import com.infy.user.service.DoctorDetailServiceImpl;
-import com.infy.user.service.PatientRegistrationService;
+import com.ibm.user.model.DoctorDetailDTO;
+import com.ibm.user.model.Login;
+import com.ibm.user.model.PatientRegistrationDTO;
+import com.ibm.user.model.PatientRegistrationDetail;
+import com.ibm.user.model.Result;
+import com.ibm.user.service.DoctorDetailServiceImpl;
+import com.ibm.user.service.PatientRegistrationService;
 @RestController
 @RequestMapping("/patientregistration")
 @CrossOrigin

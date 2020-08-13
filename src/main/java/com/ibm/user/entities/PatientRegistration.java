@@ -1,4 +1,4 @@
-package com.infy.user.entities;
+package com.ibm.user.entities;
 
 import java.util.ArrayList;
 
@@ -7,9 +7,9 @@ import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import com.infy.user.model.CovidData;
-import com.infy.user.model.PatientPhysicalAndMedicalDetails;
-import com.infy.user.model.PatientRegistrationDetail;
+import com.ibm.user.model.CovidData;
+import com.ibm.user.model.PatientPhysicalAndMedicalDetails;
+import com.ibm.user.model.PatientRegistrationDetail;
 
 @Document(collection="PatientRegistrationService")
 public class PatientRegistration {

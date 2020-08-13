@@ -1,12 +1,12 @@
-package com.infy.user.service;
+package com.ibm.user.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.infy.user.entities.DoctorDetail;
-import com.infy.user.model.DoctorDetailDTO;
-import com.infy.user.model.Login;
-import com.infy.user.repository.DoctorDetailRepository;
+import com.ibm.user.entities.DoctorDetail;
+import com.ibm.user.model.DoctorDetailDTO;
+import com.ibm.user.model.Login;
+import com.ibm.user.repository.DoctorDetailRepository;
 @Service
 public class DoctorDetailServiceImpl {
 	@Autowired

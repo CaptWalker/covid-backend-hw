@@ -1,4 +1,4 @@
-package com.infy.user.entities;
+package com.ibm.user.entities;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
